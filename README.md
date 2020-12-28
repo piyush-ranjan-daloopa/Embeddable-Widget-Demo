@@ -9,3 +9,14 @@ Make sure you have python 3.6 or above installed.
 ```
 pip install -r requirements.txt
 ```
+
+## Starting a flask server
+
+```
+EXPORT FLASK_APP=run.py
+
+flask run
+```
+
+## Open a browser and go to this URL: `http://localhost:5000`
+
