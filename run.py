@@ -11,7 +11,7 @@ CORS(app)
 @app.route('/embed-auth')
 def auth():
     response = requests.get(
-        'http://localhost:8000/api/v1/embed/token',
+        'https://www.daloopa.com/api/v1/embed/token',
         auth=HTTPBasicAuth(
             'jeremy@daloopa.com',
             '8sY2XViCw7zneBm-InZPS4x8iJ18BIytwtfNKFq3BNZZAlIH1PjYeA'

@@ -1,15 +1,15 @@
 <html>
   	<body>
 	    <div id='daloopa-embed' style="height:500px;width: 500px" data-src-id="998198">
-		     <script src='http://localhost:8000/static/embed.bundle.js'></script>
+		     <script src='https://www.daloopa.com/static/embed.bundle.js'></script>
 		     <script>
-		     	if (window.DaloopaWidget) { 
+		     	if (window.DaloopaWidget) {
 		     		window.DaloopaWidget.addFetchTokenFn(() => {
 		     			return fetch('http://localhost:5000/embed-auth')
 		     				.then((response) => response.json())
 		     				.then((payload) => payload.token);
 		     		});
-		     		
+
 		     		window.DaloopaWidget.render();
 		     	}
 		     </script>
