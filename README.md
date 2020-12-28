@@ -20,3 +20,5 @@ flask run
 
 ## Open a browser and go to this URL: `http://localhost:5000`
 
+You should see the widget getting rendered correctly.
+
