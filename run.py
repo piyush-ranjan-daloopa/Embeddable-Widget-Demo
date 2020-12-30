@@ -10,10 +10,21 @@ CORS(app)
 
 @app.route('/embed-auth')
 def auth():
+    # Authenticate the user here if needed.
+
+    # Once the user is authenticated, you can request for
+    # a Daloopa Embed Token, which looks like this:
+    #
+    # response = {
+    #   exp: <expiration_time_in_ms_since_epoch>,
+    #   token: <token_string>,
+    # }
     response = requests.get(
         'https://www.daloopa.com/api/v1/embed/token',
         auth=HTTPBasicAuth(
+            # Your username
             'jeremy@daloopa.com',
+            # Your Daloopa API key. Please put the key in a secure and private storage.
             '8sY2XViCw7zneBm-InZPS4x8iJ18BIytwtfNKFq3BNZZAlIH1PjYeA'
         ),
     )

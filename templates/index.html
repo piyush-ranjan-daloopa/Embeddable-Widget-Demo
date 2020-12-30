@@ -1,18 +1,23 @@
 <html>
-  	<body>
-	    <div id='daloopa-embed' style="height:500px;width: 500px" data-src-id="998198">
-		     <script src='https://www.daloopa.com/static/embed.bundle.js'></script>
-		     <script>
-		     	if (window.DaloopaWidget) {
-		     		window.DaloopaWidget.addFetchTokenFn(() => {
-		     			return fetch('http://localhost:5000/embed-auth')
-		     				.then((response) => response.json())
-		     				.then((payload) => payload.token);
-		     		});
+    <body>
+        <div id='daloopa-embed' style="height:500px;width: 500px" data-src-id="998198">
+            <!-- Embed.bundle.js initializes the DaloopaWidget object on window. -->
+            <script src='https://www.daloopa.com/static/embed.bundle.js'></script>
 
-		     		window.DaloopaWidget.render();
-		     	}
-		     </script>
-	    </div>
-  	</body>
+            <script>
+                if (window.DaloopaWidget) {
+                    // Here we add a javascript function to fetch a token from your own server.
+                    // The function should return a Promise that resolves to a token string.
+                    window.DaloopaWidget.addFetchTokenFn(() => {
+                        return fetch('/embed-auth')
+                                .then((response) => response.json())
+                                .then((payload) => payload.token);
+                    });
+
+                    // And then we renders the widget.
+                    window.DaloopaWidget.render();
+                }
+            </script>
+        </div>
+    </body>
 </html>
