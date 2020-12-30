@@ -23,9 +23,9 @@ def auth():
         'https://www.daloopa.com/api/v1/embed/token',
         auth=HTTPBasicAuth(
             # Your username
-            'jeremy@daloopa.com',
+            '<your-user-name>',
             # Your Daloopa API key. Please put the key in a secure and private storage.
-            '8sY2XViCw7zneBm-InZPS4x8iJ18BIytwtfNKFq3BNZZAlIH1PjYeA'
+            '<your-api-key>'
         ),
     )
 
