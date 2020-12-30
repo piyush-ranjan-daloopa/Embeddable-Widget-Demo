@@ -2,6 +2,7 @@
     <body>
         <div id='daloopa-embed' style="height:500px;width: 500px" data-src-id="998198">
             <!-- Embed.bundle.js initializes the DaloopaWidget object on window. -->
+            <!-- CDN version for the bundle coming soon -- >
             <script src='https://www.daloopa.com/static/embed.bundle.js'></script>
 
             <script>
@@ -9,6 +10,9 @@
                     // Here we add a javascript function to fetch a token from your own server.
                     // The function should return a Promise that resolves to a token string.
                     window.DaloopaWidget.addFetchTokenFn(() => {
+                        // You need to provide this function.
+                        // You can use any JS request clients as long as it returns
+                        // a Promise.
                         return fetch('/embed-auth')
                                 .then((response) => response.json())
                                 .then((payload) => payload.token);
