@@ -1,4 +1,4 @@
-## Demo Project for Preqin Embed Widget
+## Demo Project for Daloopa Embed Widget
 
 ### Pre-requisites
 
@@ -80,9 +80,9 @@ def auth():
         'https://www.daloopa.com/api/v1/embed/token',
         auth=HTTPBasicAuth(
             # Your username
-            'jeremy@daloopa.com',
+            '<username>',
             # Your Daloopa API key. Please put the key in a secure and private place.
-            '8sY2XViCw7zneBm-InZPS4x8iJ18BIytwtfNKFq3BNZZAlIH1PjYeA'
+            '<api-key>'
         ),
     )
 
@@ -96,4 +96,8 @@ def index():
 ## Open a browser and go to this URL: `http://localhost:5000`
 
 You should see the widget getting rendered correctly.
+
+## Contact us
+
+Please feel free to reach out to us via Github Issues or Github Discussions.
 
