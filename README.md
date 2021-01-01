@@ -97,3 +97,7 @@ def index():
 
 You should see the widget getting rendered correctly.
 
+## Contact us
+
+Please feel free to reach out to us via Github Issues or Github Discussions.
+
