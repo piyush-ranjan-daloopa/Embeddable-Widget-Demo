@@ -1,4 +1,4 @@
-## Demo Project for Preqin Embed Widget
+## Demo Project for Daloopa Embed Widget
 
 ### Pre-requisites
 
