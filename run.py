@@ -22,10 +22,8 @@ def auth():
     response = requests.get(
         'https://www.daloopa.com/api/v1/embed/token',
         auth=HTTPBasicAuth(
-            # Your username
-            '<your-user-name>',
-            # Your Daloopa API key. Please put the key in a secure and private storage.
-            '<your-api-key>'
+            '<username>',
+            '<api-key>'
         ),
     )
 
@@ -33,4 +31,4 @@ def auth():
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template('index.html')

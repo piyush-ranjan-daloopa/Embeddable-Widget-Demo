@@ -9,7 +9,7 @@
                 if (window.DaloopaWidget) {
                     // Here we add a javascript function to fetch a token from your own server.
                     // The function should return a Promise that resolves to a token string.
-                    window.DaloopaWidget.addFetchTokenFn(() => {
+                    window.DaloopaWidget.setFetchTokenFn(() => {
                         // You need to provide this function.
                         // You can use any JS request clients as long as it returns
                         // a Promise.
@@ -17,6 +17,9 @@
                                 .then((response) => response.json())
                                 .then((payload) => payload.token);
                     });
+
+                    // Set a url to redirect user if error or authentication failure occurs.
+                    window.DaloopaWidget.setErrorRedirectUrl('url_of_the_error_page')
 
                     // And then we renders the widget.
                     window.DaloopaWidget.render();
