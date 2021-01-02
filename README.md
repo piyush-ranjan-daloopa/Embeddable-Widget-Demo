@@ -27,21 +27,28 @@ Assuming your local server runs at localhost:5000, let’s embed our widget on t
 ```html
 <html>
     <body>
-        <div id='daloopa-embed' style="height:500px;width: 500px" data-src-id="998198">
-            <!-- Embed.bundle.js initializes the DaloopaWidget object on the window object. -->
+        <div id='daloopa-embed' style="height:500px;width: 500px; margin: 10rem auto;" data-src-id="998198">
+            <!-- Embed.bundle.js initializes the DaloopaWidget object on window. -->
+            <!-- CDN version for the bundle coming soon -->
             <script src='https://www.daloopa.com/static/embed.bundle.js'></script>
 
             <script>
                 if (window.DaloopaWidget) {
                     // Here we add a javascript function to fetch a token from your own server.
                     // The function should return a Promise that resolves to a token string.
-                    window.DaloopaWidget.addFetchTokenFn(() => {
+                    window.DaloopaWidget.setFetchTokenFn(() => {
+                        // You need to provide this function.
+                        // You can use any JS request clients as long as it returns
+                        // a Promise.
                         return fetch('/embed-auth')
                                 .then((response) => response.json())
                                 .then((payload) => payload.token);
                     });
 
-                    // And then we render the widget.
+                    // Set a url to redirect user if error or authentication failure occurs.
+                    window.DaloopaWidget.setErrorRedirectUrl('url_of_the_error_page')
+
+                    // And then we renders the widget.
                     window.DaloopaWidget.render();
                 }
             </script>
@@ -90,7 +97,7 @@ def auth():
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template('index.html')
 ```
 
 ## Open a browser and go to this URL: `http://localhost:5000`
